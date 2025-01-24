@@ -1,4 +1,4 @@
-{ inputs, outputs, lib, config, pkgs, ... }:
+{ inputs, outputs, lib, config, pkgs, pkgsStatic, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -21,7 +21,7 @@
     pkgs.neovim
     pkgs.gnumake
     pkgs.rustup
-    pkgs.gccgo14
+    # pkgs.gccgo14
     pkgs.luajit_2_0
     pkgs.unzip
     pkgs.firefox
@@ -30,6 +30,13 @@
     pkgs.oh-my-posh
     pkgs.lazygit
     pkgs.pnpm
+    pkgs.ripgrep
+    pkgs.fd
+    pkgs.google-cloud-sdk-gce
+    pkgs.protobuf_27
+    # pkgs.readline
+    # TODO make gcc work with readline. Test with `hererocks lua51 -l5.1 -rlatest`
+    # TODO make python work
 
 
     # # Adds the 'hello' command to your environment. It prints a friendly
@@ -91,4 +98,5 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
 }
