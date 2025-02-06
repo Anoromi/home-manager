@@ -5,6 +5,7 @@
     # shell = "${pkgs.fish}/bin/fish";
     terminal = "tmux-256color";
     historyLimit = 100000;
+    prefix = "C-Space";
     plugins = with pkgs;
       [
         # {
@@ -19,7 +20,7 @@
           extraConfig = '' 
             set -g @catppuccin_window_tabs_enabled on
             set -g @catppuccin_date_time "%H:%M"
-            set -g @catppuccin_flavour 'frappe'
+            set -g @catppuccin_flavour 'latte'
             '';
         }
         {
@@ -37,6 +38,7 @@
       bind '\"' split-window -v -c \"#{pane_current_path}\"
       bind % split-window -h -c \"#{pane_current_path}\"
 
+      bind C-o display-popup -E \"tms\"
 
     ";
     # plugins = with pkgs;

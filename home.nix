@@ -34,6 +34,7 @@
     pkgs.fd
     pkgs.google-cloud-sdk-gce
     pkgs.protobuf_27
+    pkgs.tmux-sessionizer
     # pkgs.readline
     # TODO make gcc work with readline. Test with `hererocks lua51 -l5.1 -rlatest`
     # TODO make python work
