@@ -35,6 +35,10 @@
     pkgs.google-cloud-sdk-gce
     pkgs.protobuf_27
     pkgs.tmux-sessionizer
+    pkgs.openssl
+    pkgs.go
+    pkgs.zulu23
+    pkgs.bun
     # pkgs.readline
     # TODO make gcc work with readline. Test with `hererocks lua51 -l5.1 -rlatest`
     # TODO make python work
@@ -76,6 +80,21 @@
   imports = [
     ./tmux.nix
   ];
+  # FAILED ATTEMPT AT CONFIGURING .profile
+  # home.sessionVariables = {
+  #   PATH = "$HOME/.npm-global/bin:$PATH";
+  #   GLOBAL_NODE_MODULES = "$HOME/.npm-global/lib/node_modules/";
+  # };
+#   programs.bash = {
+#     enable = true;
+#
+#     initExtra = ''
+# PATH="$HOME/.npm-global/bin:$PATH"
+# export GLOBAL_NODE_MODULES="$HOME/.npm-global/lib/node_modules/"
+#
+# eval "$(oh-my-posh init bash)"
+#     '';
+#   };
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
