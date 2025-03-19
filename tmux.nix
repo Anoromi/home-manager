@@ -42,6 +42,9 @@
 
       bind C-o display-popup -E \"tms\"
 
+      set -g set-titles on
+      set -g set-titles-string '#{pane_title}'
+
     ";
     # plugins = with pkgs;
     #   [
