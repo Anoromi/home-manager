@@ -39,6 +39,7 @@
     pkgs.go
     pkgs.zulu23
     pkgs.bun
+    pkgs.lazydocker
     # pkgs.readline
     # TODO make gcc work with readline. Test with `hererocks lua51 -l5.1 -rlatest`
     # TODO make python work
