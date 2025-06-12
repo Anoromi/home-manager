@@ -29,7 +29,6 @@
     pkgs.nodejs_22
     pkgs.oh-my-posh
     pkgs.lazygit
-    pkgs.pnpm
     pkgs.ripgrep
     pkgs.fd
     pkgs.google-cloud-sdk-gce
@@ -40,6 +39,9 @@
     pkgs.zulu23
     pkgs.bun
     pkgs.lazydocker
+		pkgs.awscli2
+		pkgs.bat
+		pkgs.corepack
     # pkgs.readline
     # TODO make gcc work with readline. Test with `hererocks lua51 -l5.1 -rlatest`
     # TODO make python work

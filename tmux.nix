@@ -1,4 +1,17 @@
 { pkgs, ... }:
+let
+  rose-pine = pkgs.tmuxPlugins.mkTmuxPlugin
+    {
+      pluginName = "rose-pine";
+      version = "whatever";
+      src = pkgs.fetchFromGitHub {
+        owner = "rose-pine";
+        repo = "tmux";
+        rev = "main";
+        sha256 = "sha256-YnpWvW0iWANB0snVhLKBTnOXlD3LQfbeoSFeae7SJ0c=";
+      };
+    };
+in
 {
   programs.tmux = {
     enable = true;
@@ -15,13 +28,22 @@
         #   ";
         # }
         tmuxPlugins.better-mouse-mode
+				{
+					plugin = rose-pine;
+					extraConfig = "
+set -g @catppuccin_window_tabs_enabled on
+set -g @catppuccin_date_time \"%H:%M\"
+set -g @catppuccin_flavour 'latte'
+					";
+				}
+     #    {
+     #      plugin = rose-pine;
+					# extraConfig = "set -g @rose-pine_flavour 'dawn'";
+     #    }
         {
           plugin = tmuxPlugins.catppuccin;
-          extraConfig = '' 
-            set -g @catppuccin_window_tabs_enabled on
-            set -g @catppuccin_date_time "%H:%M"
-            set -g @catppuccin_flavour 'latte'
-            '';
+          # extraConfig = '' 
+          #   '';
         }
         {
           plugin = tmuxPlugins.sensible;
@@ -44,6 +66,10 @@
 
       set -g set-titles on
       set -g set-titles-string '#{pane_title}'
+
+			set -ga terminal-overrides \",*256col*:Tc\"
+			set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
+			set-environment -g COLORTERM \"truecolor\"
 
     ";
     # plugins = with pkgs;
