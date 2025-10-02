@@ -26,7 +26,7 @@
     pkgs.unzip
     pkgs.firefox
     # pkgs.nvm
-    pkgs.nodejs_22
+    # pkgs.nodejs_22
     pkgs.oh-my-posh
     pkgs.lazygit
     pkgs.ripgrep
@@ -41,7 +41,6 @@
     pkgs.lazydocker
 		pkgs.awscli2
 		pkgs.bat
-		pkgs.corepack
     # pkgs.readline
     # TODO make gcc work with readline. Test with `hererocks lua51 -l5.1 -rlatest`
     # TODO make python work

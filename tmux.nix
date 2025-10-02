@@ -8,7 +8,7 @@ let
         owner = "rose-pine";
         repo = "tmux";
         rev = "main";
-        sha256 = "sha256-YnpWvW0iWANB0snVhLKBTnOXlD3LQfbeoSFeae7SJ0c=";
+        sha256 = "sha256-OJMBCZwqrEu2DTlojqQ3pIp2sfjIzT9ORw0ajVgZ8vo=";
       };
     };
 in
